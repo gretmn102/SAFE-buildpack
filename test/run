@@ -24,8 +24,38 @@ testDotNetCore22() {
   assertCapturedSuccess
 }
 
-# Utils
+testDotNetCore30() {
+  compile "dotnetcore-3.0"
+  assertCaptured "dotnetcore-3.0 ->"
+  assertCapturedSuccess
+}
 
+testDotNetCore30Fsharp() {
+  compile "fsharp-dotnetcore-3.0"
+  assertCaptured "dotnetcore-3.0 ->"
+  assertCapturedSuccess
+}
+
+testDotNetCore31() {
+  compile "dotnetcore-3.1"
+  assertCaptured "dotnetcore-3.1 ->"
+  assertCapturedSuccess
+}
+
+testDotNetCore5() {
+  compile "dotnetcore-5.0"
+  assertCaptured "dotnetcore-5.0 ->"
+  assertCapturedSuccess
+}
+
+testLocalTools() {
+  compile "local-tools"
+  assertCaptured "Restore was successful."
+  assertCapturedSuccess
+}
+
+# Utils
+echo "Get Utils for Test"
 pushd $(dirname 0) >/dev/null
 popd >/dev/null
 
